@@ -66,17 +66,43 @@ async function runAnalysis() {
     const anim = animateProgress();
     const form = new FormData();
     form.append('image', selectedFile);
-    try {
-        const res = await fetch(`${API}/api/detect`, { method: 'POST', body: form });
-        const data = await res.json();
-        clearInterval(anim); completeProgress();
-        if (!res.ok) throw new Error(data.error || 'Analysis failed');
-        if (data.verdict === 'ERROR') throw new Error(data.error || 'All failed');
-        setTimeout(() => { showResults(data); loadHistory(); }, 600);
-    } catch (err) {
-        clearInterval(anim); hide(loadingState);
-        showError(err.message || 'Server connection failed.');
+
+    const MAX_RETRIES = 3;
+    let lastErr = '';
+
+    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+        try {
+            // Show retry message
+            const h3 = document.querySelector('.loading-state h3');
+            if (attempt === 1) h3.textContent = 'Running 8-Layer Analysis...';
+            else h3.textContent = `Server waking up... Retry ${attempt}/${MAX_RETRIES}`;
+
+            // 120s timeout for Render cold start
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 120000);
+
+            const res = await fetch(`${API}/api/detect`, {
+                method: 'POST', body: form, signal: controller.signal
+            });
+            clearTimeout(timeout);
+            const data = await res.json();
+            clearInterval(anim); completeProgress();
+            if (!res.ok) throw new Error(data.error || 'Analysis failed');
+            if (data.verdict === 'ERROR') throw new Error(data.error || 'All failed');
+            setTimeout(() => { showResults(data); loadHistory(); }, 600);
+            return; // Success — exit
+        } catch (err) {
+            lastErr = err.name === 'AbortError' ? 'Request timed out (server may be starting)' : (err.message || 'Server connection failed');
+            if (attempt < MAX_RETRIES) {
+                // Wait 2s before retry
+                await new Promise(r => setTimeout(r, 2000));
+                continue;
+            }
+        }
     }
+    // All retries failed
+    clearInterval(anim); hide(loadingState);
+    showError(lastErr + ' — Render free server takes 30-60s to wake up. Click Try Again.');
 }
 
 // ── Progress ─────────────────────────────────────────────────────────
