@@ -7,30 +7,43 @@
     <meta name="description" content="Enterprise deepfake detection: 4 AI models + ELA, EXIF, Face Analysis, Frequency Analysis.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Animated Background -->
     <div class="bg-effects">
+        <div class="mesh-grid"></div>
         <div class="particle p1"></div><div class="particle p2"></div>
         <div class="particle p3"></div><div class="particle p4"></div>
-        <div class="glow-orb o1"></div><div class="glow-orb o2"></div>
+        <div class="particle p5"></div><div class="particle p6"></div>
+        <div class="glow-orb o1"></div><div class="glow-orb o2"></div><div class="glow-orb o3"></div>
+        <div class="scan-line"></div>
     </div>
 
+    <!-- Header -->
     <header class="header">
         <div class="header-inner">
             <div class="logo">
-                <div class="logo-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
-                <span class="logo-text">Deep<span class="accent">Scan</span> AI</span>
+                <div class="logo-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    <div class="logo-pulse"></div>
+                </div>
+                <span class="logo-text">Deep<span class="accent">Scan</span></span>
+                <span class="logo-badge">AI</span>
             </div>
-            <div class="header-models">
-                <span class="model-chip enterprise">👑 Reality Defender</span>
-                <span class="model-chip">🔬 ViT</span>
-                <span class="model-chip">🛡️ SigLIP</span>
-                <span class="model-chip">📊 ELA</span>
-                <span class="model-chip">📈 FFT</span>
+            <nav class="header-models">
+                <span class="model-chip enterprise"><span class="chip-dot gold"></span>Reality Defender</span>
+                <span class="model-chip"><span class="chip-dot purple"></span>ViT</span>
+                <span class="model-chip"><span class="chip-dot blue"></span>SigLIP</span>
+                <span class="model-chip"><span class="chip-dot cyan"></span>General AI</span>
+                <span class="model-chip"><span class="chip-dot green"></span>ELA</span>
+                <span class="model-chip"><span class="chip-dot pink"></span>FFT</span>
+            </nav>
+            <div class="header-status">
+                <div class="status-ring"><div class="status-ring-inner"></div></div>
+                <span>8 Checks Active</span>
             </div>
-            <div class="header-badge"><span class="pulse-dot"></span>8 Checks Active</div>
         </div>
     </header>
 
@@ -38,11 +51,11 @@
         <!-- History Sidebar -->
         <aside class="history-sidebar" id="history-sidebar">
             <div class="sidebar-header">
-                <h3>📜 Scan History</h3>
+                <div class="sidebar-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>History</span></div>
                 <span class="history-count" id="history-count">0</span>
             </div>
             <div id="history-list" class="history-list">
-                <div class="history-empty">No scans yet</div>
+                <div class="history-empty"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".3"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg><span>No scans yet</span></div>
             </div>
         </aside>
 
@@ -50,182 +63,203 @@
         <div class="main-content">
             <!-- Hero -->
             <section class="hero">
-                <div class="hero-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>4 AI Models + 4 Forensic Analyses</div>
-                <h1 class="hero-title">Detect <span class="gradient-text">Deepfakes</span><br><span class="hero-sub">AI + Forensic Analysis Combined</span></h1>
-                <p class="hero-desc">8-layer detection: AI ensemble (70%) + ELA, Face, Frequency & EXIF analysis (30%).</p>
+                <div class="hero-eyebrow">
+                    <div class="eyebrow-line"></div>
+                    <span>Powered by 4 AI Models + 4 Forensic Engines</span>
+                    <div class="eyebrow-line"></div>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Detect</span>
+                    <span class="title-line gradient-text">Deepfakes</span>
+                    <span class="title-line title-small">with Enterprise-Grade AI</span>
+                </h1>
+                <p class="hero-desc">8-layer detection combining AI ensemble <span class="highlight">(70%)</span> with ELA, Face, Frequency & EXIF analysis <span class="highlight">(30%)</span></p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item"><span class="stat-val">4</span><span class="stat-label">AI Models</span></div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item"><span class="stat-val">4</span><span class="stat-label">Forensics</span></div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item"><span class="stat-val">98.7%</span><span class="stat-label">Accuracy</span></div>
+                </div>
             </section>
 
             <!-- Upload -->
             <section class="upload-section">
                 <div class="upload-card">
+                    <div class="card-glow"></div>
                     <div class="upload-zone" id="upload-zone">
-                        <div class="upload-icon-wrap">
-                            <div class="upload-glow"></div>
-                            <svg class="upload-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        <div class="upload-rings">
+                            <div class="upload-ring ur1"></div>
+                            <div class="upload-ring ur2"></div>
+                            <div class="upload-ring ur3"></div>
+                        </div>
+                        <div class="upload-center">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
                         </div>
                         <h3>Drop your image here</h3>
-                        <p class="muted">PNG, JPG, JPEG, WEBP, BMP • Max 16MB</p>
+                        <p class="upload-sub">or click to browse</p>
+                        <div class="upload-formats">
+                            <span>PNG</span><span>JPG</span><span>JPEG</span><span>WEBP</span><span>BMP</span>
+                        </div>
                         <input type="file" id="file-input" accept="image/*" hidden>
                     </div>
+
+                    <!-- Preview State -->
                     <div id="preview-state" style="display:none;" class="preview-state">
                         <div class="preview-wrap">
                             <img id="preview-image" src="" alt="Preview">
-                            <button id="remove-btn" class="remove-btn" title="Remove">✕</button>
+                            <button id="remove-btn" class="remove-btn" title="Remove">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            </button>
+                            <div class="preview-scan-line"></div>
                         </div>
-                        <div class="file-meta"><span id="file-name"></span><span id="file-size" class="muted"></span></div>
+                        <div class="file-meta">
+                            <span id="file-name" class="file-name"></span>
+                            <span id="file-size" class="file-size"></span>
+                        </div>
                         <button id="analyze-btn" class="analyze-btn">
+                            <div class="btn-glow"></div>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-                            Run 8-Layer Detection
+                            <span>Run 8-Layer Detection</span>
+                            <div class="btn-shimmer"></div>
                         </button>
                     </div>
+
+                    <!-- Loading State -->
                     <div id="loading-state" style="display:none;" class="loading-state">
-                        <div class="spinner"><div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div><div class="dot"></div></div>
+                        <div class="scanner">
+                            <div class="scanner-ring sr1"></div>
+                            <div class="scanner-ring sr2"></div>
+                            <div class="scanner-ring sr3"></div>
+                            <div class="scanner-core">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                            </div>
+                        </div>
                         <h3>Running 8-Layer Analysis...</h3>
                         <div class="model-progress" id="model-progress">
-                            <div class="mp-step" id="step-rd"><span class="mp-icon">⏳</span>Reality Defender <span class="mp-badge enterprise">Enterprise</span></div>
-                            <div class="mp-step" id="step-m1"><span class="mp-icon">⏳</span>ViT Detector</div>
-                            <div class="mp-step" id="step-m2"><span class="mp-icon">⏳</span>SigLIP Detector</div>
-                            <div class="mp-step" id="step-m3"><span class="mp-icon">⏳</span>General AI Detector</div>
-                            <div class="mp-step" id="step-ela"><span class="mp-icon">⏳</span>ELA Analysis</div>
-                            <div class="mp-step" id="step-face"><span class="mp-icon">⏳</span>Face Analysis</div>
-                            <div class="mp-step" id="step-freq"><span class="mp-icon">⏳</span>Frequency Analysis</div>
-                            <div class="mp-step" id="step-exif"><span class="mp-icon">⏳</span>EXIF Metadata</div>
+                            <div class="mp-step" id="step-rd"><span class="mp-icon">⏳</span><span class="mp-label">Reality Defender</span><span class="mp-badge enterprise">Enterprise</span></div>
+                            <div class="mp-step" id="step-m1"><span class="mp-icon">⏳</span><span class="mp-label">ViT Detector</span></div>
+                            <div class="mp-step" id="step-m2"><span class="mp-icon">⏳</span><span class="mp-label">SigLIP Detector</span></div>
+                            <div class="mp-step" id="step-m3"><span class="mp-icon">⏳</span><span class="mp-label">General AI Detector</span></div>
+                            <div class="mp-step" id="step-ela"><span class="mp-icon">⏳</span><span class="mp-label">ELA Analysis</span></div>
+                            <div class="mp-step" id="step-face"><span class="mp-icon">⏳</span><span class="mp-label">Face Analysis</span></div>
+                            <div class="mp-step" id="step-freq"><span class="mp-icon">⏳</span><span class="mp-label">Frequency Analysis</span></div>
+                            <div class="mp-step" id="step-exif"><span class="mp-icon">⏳</span><span class="mp-label">EXIF Metadata</span></div>
                         </div>
                         <div class="progress-bar"><div class="progress-fill"></div></div>
                     </div>
                 </div>
             </section>
 
-            <!-- Samples -->
-            <section class="samples-section" id="samples-section">
-                <h3 class="section-label">🎯 Try Demo Samples</h3>
-                <div class="samples-grid">
-                    <button class="sample-card" data-sample="real"><div class="sample-thumb real-thumb">👤</div><span class="sample-label">Real Face</span><span class="sample-expected safe">~15% fake</span></button>
-                    <button class="sample-card" data-sample="fake"><div class="sample-thumb fake-thumb">🤖</div><span class="sample-label">AI Deepfake</span><span class="sample-expected danger">~89% fake</span></button>
-                    <button class="sample-card" data-sample="borderline"><div class="sample-thumb borderline-thumb">❓</div><span class="sample-label">Borderline</span><span class="sample-expected warning">~58% fake</span></button>
-                </div>
-            </section>
-
             <!-- Results -->
             <section id="results-section" style="display:none;" class="results-section">
-                <!-- Verdict Card -->
+                <!-- Verdict -->
                 <div class="result-card verdict-card">
+                    <div class="card-glow"></div>
                     <div class="result-header">
-                        <h2>Analysis Complete</h2>
+                        <div class="result-header-left">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                            <h2>Analysis Complete</h2>
+                        </div>
                         <div class="result-header-right">
                             <span class="mode-badge" id="mode-badge"></span>
                             <span class="time-badge" id="time-badge">0ms</span>
-                            <button id="new-scan-btn" class="new-scan-btn">↻ New Scan</button>
+                            <button id="new-scan-btn" class="new-scan-btn">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 4v6h6"/><path d="M23 20v-6h-6"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/></svg>
+                                <span>New Scan</span>
+                            </button>
                         </div>
                     </div>
+
                     <div class="verdict-body">
-                        <div class="verdict-icon" id="verdict-icon"></div>
+                        <div class="verdict-icon-wrap">
+                            <div class="verdict-icon-ring"></div>
+                            <div class="verdict-icon" id="verdict-icon"></div>
+                        </div>
                         <h2 class="verdict-text" id="verdict-text"></h2>
                         <div class="risk-badge" id="risk-badge"></div>
                         <p class="verdict-score" id="verdict-score"></p>
                         <p class="confidence-note" id="confidence-note"></p>
 
-                        <!-- Score breakdown bar -->
                         <div class="score-breakdown">
-                            <div class="sb-item"><span class="sb-label">AI Models</span><span class="sb-val" id="ai-score-val">0%</span><div class="sb-bar"><div class="sb-fill ai-fill" id="ai-score-bar"></div></div></div>
-                            <div class="sb-item"><span class="sb-label">Forensic Analysis</span><span class="sb-val" id="feature-score-val">0%</span><div class="sb-bar"><div class="sb-fill feature-fill" id="feature-score-bar"></div></div></div>
+                            <div class="sb-item">
+                                <div class="sb-header"><span class="sb-label">🤖 AI Models</span><span class="sb-val" id="ai-score-val">0%</span></div>
+                                <div class="sb-bar"><div class="sb-fill ai-fill" id="ai-score-bar"></div></div>
+                            </div>
+                            <div class="sb-item">
+                                <div class="sb-header"><span class="sb-label">🔬 Forensics</span><span class="sb-val" id="feature-score-val">0%</span></div>
+                                <div class="sb-bar"><div class="sb-fill feature-fill" id="feature-score-bar"></div></div>
+                            </div>
                         </div>
 
-                        <!-- Gauge -->
                         <div class="gauge-wrap">
                             <svg class="gauge-svg" viewBox="0 0 200 120">
-                                <path class="gauge-bg" d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke-width="14" stroke-linecap="round"/>
-                                <path class="gauge-fill" id="gauge-fill" d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke-width="14" stroke-linecap="round"/>
+                                <defs>
+                                    <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#00e09e"/>
+                                        <stop offset="50%" style="stop-color:#ffb347"/>
+                                        <stop offset="100%" style="stop-color:#ff4d6a"/>
+                                    </linearGradient>
+                                </defs>
+                                <path class="gauge-bg" d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke-width="12" stroke-linecap="round"/>
+                                <path class="gauge-fill" id="gauge-fill" d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke-width="12" stroke-linecap="round"/>
                             </svg>
                             <div class="gauge-val" id="gauge-val">0%</div>
-                            <div class="gauge-labels"><span>Real</span><span>Fake</span></div>
+                            <div class="gauge-labels"><span>Authentic</span><span>Deepfake</span></div>
                         </div>
 
                         <div class="result-img-wrap" id="result-img-wrap">
                             <img id="result-image" src="" alt="Analyzed">
                             <div class="result-badge" id="result-badge"></div>
+                            <div class="result-scan-overlay"></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- TABS -->
+                <!-- Tabs -->
                 <div class="tabs-card">
+                    <div class="card-glow"></div>
                     <div class="tabs-nav">
-                        <button class="tab-btn active" data-tab="tab-models">🤖 AI Models</button>
-                        <button class="tab-btn" data-tab="tab-ela">📊 ELA</button>
-                        <button class="tab-btn" data-tab="tab-face">👤 Face</button>
-                        <button class="tab-btn" data-tab="tab-freq">📈 Frequency</button>
-                        <button class="tab-btn" data-tab="tab-exif">📋 EXIF</button>
+                        <button class="tab-btn active" data-tab="tab-models"><span class="tab-icon">🤖</span><span class="tab-text">AI Models</span></button>
+                        <button class="tab-btn" data-tab="tab-ela"><span class="tab-icon">📊</span><span class="tab-text">ELA</span></button>
+                        <button class="tab-btn" data-tab="tab-face"><span class="tab-icon">👤</span><span class="tab-text">Face</span></button>
+                        <button class="tab-btn" data-tab="tab-freq"><span class="tab-icon">📈</span><span class="tab-text">Frequency</span></button>
+                        <button class="tab-btn" data-tab="tab-exif"><span class="tab-icon">📋</span><span class="tab-text">EXIF</span></button>
                     </div>
 
-                    <!-- Tab: AI Models -->
                     <div class="tab-panel active" id="tab-models">
-                        <div class="card-title"><span>Model Breakdown</span><span class="models-responded" id="models-responded"></span></div>
+                        <div class="panel-header"><span>Model Breakdown</span><span class="models-responded" id="models-responded"></span></div>
                         <div id="model-cards" class="model-cards"></div>
                     </div>
-
-                    <!-- Tab: ELA -->
                     <div class="tab-panel" id="tab-ela">
-                        <div class="analysis-header">
-                            <h3>📊 Error Level Analysis</h3>
-                            <div class="analysis-badges">
-                                <span class="a-score" id="ela-score">0%</span>
-                                <span class="a-verdict" id="ela-verdict">—</span>
-                            </div>
-                        </div>
+                        <div class="analysis-header"><h3>📊 Error Level Analysis</h3><div class="analysis-badges"><span class="a-score" id="ela-score">0%</span><span class="a-verdict" id="ela-verdict">—</span></div></div>
                         <p class="analysis-desc" id="ela-desc"></p>
-                        <div class="analysis-img-wrap" id="ela-img-wrap" style="display:none;">
-                            <p class="img-label">ELA Visualization — Bright spots indicate tampering</p>
-                            <img id="ela-image" src="" alt="ELA Result">
-                        </div>
+                        <div class="analysis-img-wrap" id="ela-img-wrap" style="display:none;"><p class="img-label">ELA Visualization — Bright spots indicate tampering</p><img id="ela-image" src="" alt="ELA"></div>
                     </div>
-
-                    <!-- Tab: Face -->
                     <div class="tab-panel" id="tab-face">
-                        <div class="analysis-header">
-                            <h3>👤 Face Symmetry Analysis</h3>
-                            <div class="analysis-badges">
-                                <span class="a-score" id="face-score">0%</span>
-                                <span class="a-verdict" id="face-verdict">—</span>
-                                <span class="face-count-badge" id="face-count-badge"></span>
-                            </div>
-                        </div>
+                        <div class="analysis-header"><h3>👤 Face Symmetry Analysis</h3><div class="analysis-badges"><span class="a-score" id="face-score">0%</span><span class="a-verdict" id="face-verdict">—</span><span class="face-count-badge" id="face-count-badge"></span></div></div>
                         <div id="face-flags" class="flags-list"></div>
                     </div>
-
-                    <!-- Tab: Frequency -->
                     <div class="tab-panel" id="tab-freq">
-                        <div class="analysis-header">
-                            <h3>📈 Frequency Analysis (FFT)</h3>
-                            <div class="analysis-badges">
-                                <span class="a-score" id="freq-score">0%</span>
-                                <span class="a-verdict" id="freq-verdict">—</span>
-                            </div>
-                        </div>
+                        <div class="analysis-header"><h3>📈 Frequency Analysis (FFT)</h3><div class="analysis-badges"><span class="a-score" id="freq-score">0%</span><span class="a-verdict" id="freq-verdict">—</span></div></div>
                         <div id="freq-flags" class="flags-list"></div>
-                        <div class="analysis-img-wrap" id="freq-img-wrap" style="display:none;">
-                            <p class="img-label">FFT Spectrum — Bright spots/grids indicate GAN artifacts</p>
-                            <img id="freq-image" src="" alt="FFT Result">
-                        </div>
+                        <div class="analysis-img-wrap" id="freq-img-wrap" style="display:none;"><p class="img-label">FFT Spectrum — Bright spots/grids = GAN artifacts</p><img id="freq-image" src="" alt="FFT"></div>
                     </div>
-
-                    <!-- Tab: EXIF -->
                     <div class="tab-panel" id="tab-exif">
-                        <div class="analysis-header">
-                            <h3>📋 EXIF Metadata</h3>
-                            <div class="analysis-badges">
-                                <span class="a-score" id="exif-score">0%</span>
-                                <span class="a-verdict" id="exif-verdict">—</span>
-                            </div>
-                        </div>
+                        <div class="analysis-header"><h3>📋 EXIF Metadata</h3><div class="analysis-badges"><span class="a-score" id="exif-score">0%</span><span class="a-verdict" id="exif-verdict">—</span></div></div>
                         <div id="exif-meta-table" class="meta-table"></div>
                         <div id="exif-flags" class="flags-list"></div>
                     </div>
                 </div>
 
                 <!-- Flags -->
-                <div class="result-card">
-                    <div class="card-title"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg><span>Detection Flags</span></div>
+                <div class="result-card flags-card">
+                    <div class="card-glow"></div>
+                    <div class="panel-header">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+                        <span>Detection Flags</span>
+                    </div>
                     <div id="flags-list" class="flags-list"></div>
                 </div>
             </section>
@@ -233,7 +267,8 @@
             <!-- Error -->
             <section id="error-section" style="display:none;" class="error-section">
                 <div class="error-card">
-                    <div class="error-icon">⚠️</div><h3>Analysis Failed</h3>
+                    <div class="error-icon">⚠️</div>
+                    <h3>Analysis Failed</h3>
                     <p id="error-message"></p>
                     <button id="retry-btn" class="retry-btn">↻ Try Again</button>
                 </div>
@@ -242,8 +277,10 @@
     </main>
 
     <footer class="footer">
-        <p>Built with <span class="heart">♥</span> using Flask & Hugging Face AI</p>
-        <p class="footer-sub">70% AI Ensemble + 30% Forensic Analysis = Final Score</p>
+        <div class="footer-inner">
+            <p>Built with <span class="heart">♥</span> using Flask & Hugging Face AI</p>
+            <p class="footer-sub">70% AI Ensemble + 30% Forensic Analysis = Final Score</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
